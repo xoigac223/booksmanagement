@@ -11,8 +11,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 public class LoginRequiredFilter implements Filter {
 	
 	@Override
@@ -25,8 +23,7 @@ public class LoginRequiredFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		if(req.getSession(false).getAttribute("uname") != null) {
-			System.out.print(req.getSession(false).getAttribute("uname"));
+		if(req.getSession().getAttribute("uname") != null) {
 			chain.doFilter(request, response);
 		} else {
 			resp.sendRedirect("login");
