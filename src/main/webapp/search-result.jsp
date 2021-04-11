@@ -16,6 +16,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	<%@ include file="navigation.jspf"%>
 	<div class="container">
 		<div class="font-weight-bold text-center">SEARCH RESULT FOR
 			INPUT</div>

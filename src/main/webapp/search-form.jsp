@@ -15,6 +15,8 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	<%@ include file="navigation.jspf"%>
+	
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-4">
