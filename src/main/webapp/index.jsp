@@ -36,6 +36,7 @@
 					</div>
 				</form>
 				<p style="color: red">${errorMessage}</p>
+				<p style="color: blue">${loginRequireMessage}</p>
 			</div>
 		</div>
 	</div>

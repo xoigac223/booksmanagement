@@ -26,7 +26,8 @@ public class LoginRequiredFilter implements Filter {
 		if(req.getSession().getAttribute("uname") != null) {
 			chain.doFilter(request, response);
 		} else {
-			resp.sendRedirect("login");
+			req.setAttribute("loginRequireMessage", "You must be logged in to access this page");
+			req.getRequestDispatcher("/index.jsp").forward(req, resp);
 		}
 	}
 	
