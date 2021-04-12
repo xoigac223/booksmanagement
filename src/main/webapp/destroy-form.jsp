@@ -1,7 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,18 +19,14 @@
 </head>
 <body>
 	<%@ include file="navigation.jspf"%>
-	
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-4">
-				<form action="booksearch" method="get">
-					<div class="font-weight-bold text-center">SEARCH BOOK</div>
-					<div class="form-group my-6">
-						<input type="text" name="bookName" id="bookName" class="form-control" placeholder="Type book's name or publisher...">
-					</div>
+				You want to remove <span class="font-italic"><c:out value='${book.name}' /></span>
+				<form action="books?action=destroy&id=<c:out value='${book.id}' />" method="post">
 					<div class="form-group">
-						<button type="submit"
-							class="btn btn-primary form-control text-center">Search</button>
+						<a href="javascript:history.back()" class="btn btn-secondary">No</a>
+						<button type="submit" class="btn btn-danger">Yes</button>
 					</div>
 				</form>
 			</div>
